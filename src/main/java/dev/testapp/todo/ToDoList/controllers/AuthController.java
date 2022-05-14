@@ -34,7 +34,7 @@ public class AuthController {
 
             User dbUser = usersStorage.findUserByName(name);
             String token = null;
-            if (dbUser != null && dbUser.getPassword().equals(password)) token = jwtProvider.generateToken(name, password);
+            if (dbUser != null && dbUser.getPassword().equals(password)) token = jwtProvider.generateToken(name);
             if (token != null) {
                 responseData.put("response", token);
                 statusCode = 200;
