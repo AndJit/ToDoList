@@ -17,7 +17,7 @@ public class JwtProvider {
     @Value("${jwt.secret}")
     private String jwtSecret;
 
-    public String generateToken(String username, String password) {
+    public String generateToken(String username) {
         Date date = Date.from(LocalDate.now().plusDays(7).atStartOfDay(ZoneId.systemDefault()).toInstant());
         Map<String, Object> map = new HashMap(){
             {
